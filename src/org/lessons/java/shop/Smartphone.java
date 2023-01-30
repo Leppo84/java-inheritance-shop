@@ -1,16 +1,20 @@
 package org.lessons.java.shop;
 
+import java.util.Random;
+
 public class Smartphone extends Prodotto {
 	
-	private double mobileCodeImei;
+	private int mobileCodeImei;
 	private int mobileMemory;
 
-	public Smartphone(String prodName, String prodBrand, double prodPrice, double mobileCodeImei, int mobileMemory) {
+	public Smartphone(String prodName, String prodBrand, double prodPrice, int mobileMemory) {
 		super(prodName, prodBrand, prodPrice);
-		this.mobileCodeImei = mobileCodeImei;
+		Random c=new Random();
+		this.mobileCodeImei = c.nextInt(1000000000);
+//		this.mobileCodeImei = mobileCodeImei;
 		this.mobileMemory = mobileMemory;
 	}
-	public double getMobileCodeImei() {
+	public int getMobileCodeImei() {
 		return mobileCodeImei;
 	}
 	public void setMobileCodeImei(int mobileCodeImei) {
